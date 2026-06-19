@@ -1,9 +1,12 @@
 def heapify(arr: list[int]):
     pass
-    
+
 
 def heap_push(arr: list[int], value: int) -> None:
     # Assumes arr has been heapified
+    if arr is None:
+        raise ValueError("arr cannot be None")
+
     arr.append(value)
     index = len(arr) - 1
     parent_index = (index - 1) // 2
@@ -48,15 +51,8 @@ def heap_pop(arr: list[int]):
     arr[index] = None
     return min_number
 
-    # while arr[left_child] < arr[index] or arr[right_child] < arr[index]:
-    #     if arr[left_child] < arr[index]:
-    #         # tmp = arr[index]
-    #         arr[index] = arr[left_child]
-    #         arr[left_child] = None
-    
-
 def heap_peek(arr: list[int]) -> int:
-    pass
+    return arr[0]
 
 
 '''
